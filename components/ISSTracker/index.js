@@ -17,17 +17,13 @@ export default function ISSTracker() {
   if (isLoading) {
     return <div>loading...</div>;
   }
-  const handleReload = () => {
-    mutate();
-  };
-
   return (
     <main>
       <Map longitude={data.longitude} latitude={data.latitude} />
       <Controls
         longitude={data.longitude}
         latitude={data.latitude}
-        onRefresh={() => handleReload()}
+        onRefresh={() => mutate()}
       />
     </main>
   );
